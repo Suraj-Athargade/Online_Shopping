@@ -3,6 +3,7 @@ package com.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Product {
@@ -14,6 +15,22 @@ private float pprice;
 private String pbrand;
 private String pcolor;
 private String pdesc;
+private String category;
+private String subCategory;
+
+public String getCategory() {
+	return category;
+}
+public void setCategory(String category) {
+	this.category = category;
+}
+public String getSubCategory() {
+	return subCategory;
+}
+public void setSubCategory(String subCategory) {
+	this.subCategory = subCategory;
+}
+
 public int getPid() {
 	return pid;
 }
@@ -50,7 +67,12 @@ public String getPdesc() {
 public void setPdesc(String pdesc) {
 	this.pdesc = pdesc;
 }
-public Product(String pname, float pprice, String pbrand, String pcolor, String pdesc) {
+
+public Product() {
+	super();
+}
+public Product(String pname, float pprice, String pbrand, String pcolor, String pdesc, String category,
+		String subCategory) {
 	super();
 	
 	this.pname = pname;
@@ -58,15 +80,15 @@ public Product(String pname, float pprice, String pbrand, String pcolor, String 
 	this.pbrand = pbrand;
 	this.pcolor = pcolor;
 	this.pdesc = pdesc;
-}
-public Product() {
-	super();
-	// TODO Auto-generated constructor stub
+	this.category = category;
+	this.subCategory = subCategory;
 }
 @Override
 public String toString() {
 	return "Product [pid=" + pid + ", pname=" + pname + ", pprice=" + pprice + ", pbrand=" + pbrand + ", pcolor="
-			+ pcolor + ", pdesc=" + pdesc + "]";
+			+ pcolor + ", pdesc=" + pdesc + ", category=" + category + ", subCategory=" + subCategory + "]";
 }
 
+
 }
+

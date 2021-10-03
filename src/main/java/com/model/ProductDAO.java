@@ -12,5 +12,5 @@ public interface ProductDAO {
 	
 	public boolean update(Product product);
 	public boolean delete(int pid);
+	public boolean delete1(Product product);
 }
-

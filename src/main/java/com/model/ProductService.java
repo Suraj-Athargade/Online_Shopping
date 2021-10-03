@@ -24,14 +24,18 @@ public class ProductService {
 	   }
 	   public boolean  delete(int pid)
 	   {
-		  Product product=findProduct(pid);
+		  Product product=productDAOImpl.findProduct(pid);
 	        return productDAOImpl.delete(pid);
-		   //Product product=productDAOImpl.findProduct(pid);
-		   //return productDAOImpl.delete(pid);
+	   }
+	   public boolean  delete1(Product product)
+	   {
+		   return productDAOImpl.delete1(product);
 	   }
 	   public Product findProduct(int pid) {
-		// Product product=productDAOImpl.findProduct(pid);
-		  return productDAOImpl.findProduct(pid);
-	  }
-
+		   return productDAOImpl.findProduct(pid);
+	   }
 }
+
+
+
+
